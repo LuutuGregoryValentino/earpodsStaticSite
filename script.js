@@ -7,90 +7,99 @@
    - Contact form validation
    ========================================================= */
 
-/* ---------- Product catalog ---------- */
+/* ---------- Currency helper ---------- */
+function formatUGX(amount) {
+  return "UGX " + Number(amount).toLocaleString("en-US");
+}
+
+/* ---------- Product catalog ----------
+   Real brand names, spread across budget → premium tiers.
+   Prices in Ugandan Shillings (UGX).
+*/
 const PRODUCTS = [
   {
-    id: "aap-onyx",
-    name: "Aria Pro",
+    id: "oraimo-freepods-4",
+    name: "Oraimo FreePods 4",
     category: "earbuds",
     categoryLabel: "Wireless Earbuds",
-    price: 249,
+    price: 120000,
     image: "public/images/earbuds-onyx.jpg",
-    color: "Onyx",
-    swatches: ["#1a1a1a", "#f5f1ea", "#b8926a"],
+    color: "Matte Black",
+    swatches: ["#1a1a1a", "#f5f1ea"],
     tag: "Best Seller",
   },
   {
-    id: "aap-ivory",
-    name: "Aria Pro",
+    id: "airpods-pro-2",
+    name: "Apple AirPods Pro (2nd Gen)",
     category: "earbuds",
     categoryLabel: "Wireless Earbuds",
-    price: 249,
+    price: 850000,
     image: "public/images/earbuds-ivory.jpg",
-    color: "Ivory",
-    swatches: ["#f5f1ea", "#1a1a1a", "#b8926a"],
-  },
-  {
-    id: "hp-midnight",
-    name: "Studio One",
-    category: "headphones",
-    categoryLabel: "Over-Ear Headphones",
-    price: 449,
-    image: "public/images/headphones-midnight.jpg",
-    color: "Midnight",
-    swatches: ["#1a1a1a", "#d4c4a8"],
+    color: "White",
+    swatches: ["#f5f1ea"],
     tag: "New",
   },
   {
-    id: "hp-champagne",
-    name: "Studio One",
+    id: "jbl-tune-770nc",
+    name: "JBL Tune 770NC",
     category: "headphones",
     categoryLabel: "Over-Ear Headphones",
-    price: 449,
-    image: "public/images/headphones-champagne.jpg",
-    color: "Champagne",
-    swatches: ["#d4c4a8", "#1a1a1a"],
+    price: 480000,
+    image: "public/images/headphones-midnight.jpg",
+    color: "Midnight Black",
+    swatches: ["#1a1a1a", "#d4c4a8"],
   },
   {
-    id: "pod-gray",
-    name: "Halo Pods",
+    id: "sony-wh-1000xm5",
+    name: "Sony WH-1000XM5",
+    category: "headphones",
+    categoryLabel: "Over-Ear Headphones",
+    price: 1450000,
+    image: "public/images/headphones-champagne.jpg",
+    color: "Silver",
+    swatches: ["#d4c4a8", "#1a1a1a"],
+    tag: "Editor's Pick",
+  },
+  {
+    id: "airpods-max",
+    name: "Apple AirPods Max",
     category: "pods",
     categoryLabel: "Premium Audio Pods",
-    price: 599,
+    price: 2800000,
     image: "public/images/pods-spacegray.jpg",
     color: "Space Gray",
     swatches: ["#4a4a4a", "#d9c9b3"],
   },
   {
-    id: "pod-sand",
-    name: "Halo Pods",
+    id: "bose-qc-ultra",
+    name: "Bose QuietComfort Ultra",
     category: "pods",
     categoryLabel: "Premium Audio Pods",
-    price: 599,
+    price: 1650000,
     image: "public/images/pods-sand.jpg",
-    color: "Sand",
+    color: "Sandstone",
     swatches: ["#d9c9b3", "#4a4a4a"],
   },
   {
-    id: "spk-charcoal",
-    name: "Resonance 01",
+    id: "marshall-emberton-ii",
+    name: "Marshall Emberton II",
     category: "speakers",
     categoryLabel: "Bluetooth Speaker",
-    price: 329,
+    price: 520000,
     image: "public/images/speaker-charcoal.jpg",
-    color: "Charcoal",
+    color: "Black & Brass",
     swatches: ["#3a3a3a", "#c26a3f"],
   },
   {
-    id: "spk-terracotta",
-    name: "Resonance 01",
+    id: "jbl-flip-6",
+    name: "JBL Flip 6",
     category: "speakers",
     categoryLabel: "Bluetooth Speaker",
-    price: 329,
+    price: 350000,
     image: "public/images/speaker-terracotta.jpg",
-    color: "Terracotta",
+    color: "Squad Orange",
     swatches: ["#c26a3f", "#3a3a3a"],
-    tag: "Limited",
+    tag: "Budget Pick",
   },
 ];
 
@@ -148,11 +157,13 @@ function updateCartCount() {
 function openCart() {
   document.querySelector("[data-cart-drawer]")?.classList.add("open");
   document.querySelector("[data-cart-overlay]")?.classList.add("visible");
+  document.body.style.overflow = "hidden";
 }
 
 function closeCart() {
   document.querySelector("[data-cart-drawer]")?.classList.remove("open");
   document.querySelector("[data-cart-overlay]")?.classList.remove("visible");
+  document.body.style.overflow = "";
 }
 
 function renderCartDrawer() {
@@ -163,7 +174,7 @@ function renderCartDrawer() {
   const cart = getCart();
   if (cart.length === 0) {
     body.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
-    if (totalEl) totalEl.textContent = "$0";
+    if (totalEl) totalEl.textContent = formatUGX(0);
     return;
   }
 
@@ -177,7 +188,7 @@ function renderCartDrawer() {
           <div class="cart-item-info">
             <div class="name">${p.name}</div>
             <div class="qty">${p.color} · Qty ${item.qty}</div>
-            <div class="qty">$${(p.price * item.qty).toLocaleString()}</div>
+            <div class="qty">${formatUGX(p.price * item.qty)}</div>
           </div>
           <button class="cart-item-remove" data-remove="${p.id}" aria-label="Remove ${p.name}">Remove</button>
         </div>
@@ -185,7 +196,7 @@ function renderCartDrawer() {
     })
     .join("");
 
-  if (totalEl) totalEl.textContent = "$" + cartTotal().toLocaleString();
+  if (totalEl) totalEl.textContent = formatUGX(cartTotal());
 
   body.querySelectorAll("[data-remove]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -211,7 +222,7 @@ function productCardHTML(p) {
       </div>
       <div class="product-meta">
         <h3 class="product-name">${p.name}</h3>
-        <span class="product-price">$${p.price}</span>
+        <span class="product-price">${formatUGX(p.price)}</span>
       </div>
       <div class="product-category">${p.categoryLabel} · ${p.color}</div>
       <div class="product-colors">${swatches}</div>
@@ -225,10 +236,10 @@ function renderProducts(containerSelector, opts = {}) {
   if (!container) return;
 
   let list = PRODUCTS.slice();
-  if (opts.limit) list = list.slice(0, opts.limit);
   if (opts.category && opts.category !== "all") {
     list = list.filter((p) => p.category === opts.category);
   }
+  if (opts.limit) list = list.slice(0, opts.limit);
 
   container.innerHTML = list.map(productCardHTML).join("");
 
@@ -266,7 +277,19 @@ function initNav() {
   const toggle = document.querySelector("[data-menu-toggle]");
   const links = document.querySelector("[data-nav-links]");
   if (toggle && links) {
-    toggle.addEventListener("click", () => links.classList.toggle("open"));
+    toggle.addEventListener("click", () => {
+      const isOpen = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+    // Close mobile menu when a link is clicked
+    links.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
   }
 
   // Active link based on pathname
