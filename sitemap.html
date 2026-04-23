@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#f5f1ea" />
   <title>Site Map — Antonio's Airpods+</title>
   <meta name="description" content="The full architecture of the Antonio's Airpods+ website — every page, in one place." />
@@ -31,7 +31,7 @@
         <button class="cart-btn" data-cart-open aria-label="Open cart">
           Cart <span class="cart-count" data-cart-count>0</span>
         </button>
-        <button class="menu-toggle" data-menu-toggle aria-label="Toggle menu">
+        <button class="menu-toggle" data-menu-toggle aria-label="Toggle menu" aria-expanded="false">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="3" y1="7" x2="21" y2="7" />
             <line x1="3" y1="12" x2="21" y2="12" />
@@ -78,8 +78,9 @@
         <div class="sitemap-col">
           <h3>Company</h3>
           <ul>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="about.html">Timeline</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">What We Carry</a></li>
+            <li><a href="about.html">Why Shop With Us</a></li>
             <li><a href="contact.html">Press &amp; Partnerships</a></li>
           </ul>
         </div>
@@ -108,14 +109,15 @@
 │
 ├── <a href="shop.html">shop.html</a>               <span class="dim"># Shop</span>
 │   ├── All Products
-│   ├── Earbuds            <span class="dim">— Aria Pro</span>
-│   ├── Headphones         <span class="dim">— Studio One</span>
-│   ├── Audio Pods         <span class="dim">— Halo Pods</span>
-│   └── Speakers           <span class="dim">— Resonance 01</span>
+│   ├── Earbuds            <span class="dim">— Oraimo, Apple AirPods Pro</span>
+│   ├── Headphones         <span class="dim">— JBL, Sony WH-1000XM5</span>
+│   ├── Audio Pods         <span class="dim">— AirPods Max, Bose QC Ultra</span>
+│   └── Speakers           <span class="dim">— JBL Flip, Marshall Emberton</span>
 │
 ├── <a href="about.html">about.html</a>              <span class="dim"># About</span>
-│   ├── Our story
-│   └── Timeline (2023 → 2026)
+│   ├── Intro
+│   ├── What we carry
+│   └── Why shop with us
 │
 ├── <a href="contact.html">contact.html</a>            <span class="dim"># Contact</span>
 │   ├── Contact information
@@ -158,7 +160,7 @@
           <h5>Contact</h5>
           <ul>
             <li><a href="mailto:antoniozairpodsplus@gmail.com">antoniozairpodsplus@gmail.com</a></li>
-            <li><a href="tel:+0771950471">0771 950 471</a></li>
+            <li><a href="tel:+256771950471">0771 950 471</a></li>
           </ul>
         </div>
       </div>
@@ -177,7 +179,7 @@
     </div>
     <div class="cart-body" data-cart-body></div>
     <div class="cart-footer">
-      <div class="cart-total"><span>Subtotal</span><strong data-cart-total>$0</strong></div>
+      <div class="cart-total"><span>Subtotal</span><strong data-cart-total>UGX 0</strong></div>
       <button class="btn btn-primary" onclick="alert('Checkout is not available in this demo.')">Checkout</button>
     </div>
   </aside>
