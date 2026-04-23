@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f1ea" />
+  <title>Shop — Antonio's Airpods+</title>
+  <meta name="description" content="Shop premium earbuds, headphones, audio pods and bluetooth speakers from Antonio's Airpods+." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif'%3EA%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Antonio&rsquo;s <span>Airpods+</span></a>
+      <nav>
+        <ul class="nav-links" data-nav-links>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-btn" data-cart-open aria-label="Open cart">
+          Cart <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" data-menu-toggle aria-label="Toggle menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">The Collection</span>
+            <h2>Every product we make.</h2>
+          </div>
+          <p>A small, considered range. Free shipping and 30-day returns on every order.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Product filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="earbuds">Earbuds</button>
+          <button class="filter-btn" data-filter="headphones">Headphones</button>
+          <button class="filter-btn" data-filter="pods">Audio Pods</button>
+          <button class="filter-btn" data-filter="speakers">Speakers</button>
+        </div>
+
+        <div class="product-grid" data-product-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">Antonio&rsquo;s <span style="color:var(--accent)">Airpods+</span></a>
+          <p>Premium audio devices designed for people who care how things sound — and how they&rsquo;re made.</p>
+        </div>
+        <div>
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">Earbuds</a></li>
+            <li><a href="shop.html">Headphones</a></li>
+            <li><a href="shop.html">Audio Pods</a></li>
+            <li><a href="shop.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.html">Site Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:antoniozairpodsplus@gmail.com">antoniozairpodsplus@gmail.com</a></li>
+            <li><a href="tel:+0771950471">0771 950 471</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Antonio&rsquo;s Airpods+. All rights reserved.</span>
+        <span>Built with care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" data-cart-overlay></div>
+  <aside class="cart-drawer" data-cart-drawer aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" data-cart-close aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" data-cart-body></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal</span><strong data-cart-total>$0</strong></div>
+      <button class="btn btn-primary" onclick="alert('Checkout is not available in this demo.')">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

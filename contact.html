@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f1ea" />
+  <title>Contact — Antonio's Airpods+</title>
+  <meta name="description" content="Get in touch with the Antonio's Airpods+ team — we reply personally to every message." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif'%3EA%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Antonio&rsquo;s <span>Airpods+</span></a>
+      <nav>
+        <ul class="nav-links" data-nav-links>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-btn" data-cart-open aria-label="Open cart">
+          Cart <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" data-menu-toggle aria-label="Toggle menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <span class="eyebrow">Get in Touch</span>
+        <h1>We&rsquo;d love to hear from you.</h1>
+        <p>Questions about a product, order support, or just want to say hello? A real person on our team will reply within one business day.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="contact-grid">
+        <!-- CONTACT INFO -->
+        <aside class="contact-info">
+          <h3>Contact Information</h3>
+
+          <div class="info-block">
+            <div class="label">Email</div>
+            <div class="value">
+              <a href="mailto:antoniozairpodsplus@gmail.com">antoniozairpodsplus@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="label">Phone</div>
+            <div class="value">
+              <a href="tel:+0771950471">0771 950 471</a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="label">Hours</div>
+            <div class="value">Mon&ndash;Fri, 9:00 &ndash; 18:00</div>
+          </div>
+
+          <div class="info-block">
+            <div class="label">Headquarters</div>
+            <div class="value">Online &mdash; we ship worldwide.<br/>No physical storefront.</div>
+          </div>
+
+          <div class="info-block">
+            <div class="label">Press &amp; Partnerships</div>
+            <div class="value">
+              <a href="mailto:antoniozairpodsplus@gmail.com">antoniozairpodsplus@gmail.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- FORM -->
+        <form class="contact-form" data-contact-form novalidate>
+          <div class="form-row">
+            <div class="form-field" style="margin-bottom:0;">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-field" style="margin-bottom:0;">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">Select a topic</option>
+              <option>Product question</option>
+              <option>Order support</option>
+              <option>Warranty &amp; repairs</option>
+              <option>Press &amp; partnerships</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us what you&rsquo;re thinking…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+
+          <div class="form-success" data-form-success>
+            Thanks — your message is on its way. We&rsquo;ll reply within one business day.
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">Antonio&rsquo;s <span style="color:var(--accent)">Airpods+</span></a>
+          <p>Premium audio devices designed for people who care how things sound — and how they&rsquo;re made.</p>
+        </div>
+        <div>
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">Earbuds</a></li>
+            <li><a href="shop.html">Headphones</a></li>
+            <li><a href="shop.html">Audio Pods</a></li>
+            <li><a href="shop.html">Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.html">Site Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:antoniozairpodsplus@gmail.com">antoniozairpodsplus@gmail.com</a></li>
+            <li><a href="tel:+0771950471">0771 950 471</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Antonio&rsquo;s Airpods+. All rights reserved.</span>
+        <span>Built with care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" data-cart-overlay></div>
+  <aside class="cart-drawer" data-cart-drawer aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" data-cart-close aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" data-cart-body></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal</span><strong data-cart-total>$0</strong></div>
+      <button class="btn btn-primary" onclick="alert('Checkout is not available in this demo.')">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
